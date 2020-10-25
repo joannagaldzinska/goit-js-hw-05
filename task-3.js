@@ -1,6 +1,6 @@
  // Write code under this line
 class Storage {
-    constructor(items){
+    constructor(items) {
         this.items = items;
     }
 
@@ -13,14 +13,15 @@ class Storage {
     }
 
     removeItem(item){
-        return this.items;
-
-    }
+        let i = this.items.indexOf(item)
+        
+        return this.items.splice(i,1)
+     }
 }
 
-Storage.prototype.getItems = function(items) {
-    return items
-}
+// Storage.prototype.getItems = function(items) {
+//     return this.items;
+// }
 
 console.log(typeof Storage);
 // 'function'
@@ -33,7 +34,7 @@ const goods = [
   ];
   
 const storage = new Storage(goods);
-  
+
 console.log(storage.getItems());
   /* [
     'Нанитоиды',
@@ -42,8 +43,8 @@ console.log(storage.getItems());
     'Антигравитатор'
   ] */
   
-  storage.addItem('Дроид');
-  console.log(storage.getItems());
+storage.addItem('Дроид');
+console.log(storage.getItems());
   /* [
     'Нанитоиды',
     'Пролонгер',
